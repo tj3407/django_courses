@@ -1,0 +1,60 @@
+#formContainer, #courseContainer {
+    width: 980px;
+    margin: 50px 0px 0px 100px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+    
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+    
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+a, h1, p, button {
+    font-family: arial, sans-serif;
+}
+
+#container form {
+    display: inline;
+}
+#delete{
+    width: 150px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    box-shadow: 2px 2px silver;
+    margin-left: 30px;
+}
+
+#cancel{
+    width: 75px;
+    height: 30px;
+    color: white;
+    background-color: grey;
+    box-shadow: 2px 2px silver;
+}
+#formContainer button{
+    margin-left: 150px;
+    width: 75px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    box-shadow: 2px 2px silver;
+}
+textarea{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 65px;
+    width: 200px;
+}
+#formContainer input{
+    margin-left: 100px;
+    width: 200px;
+}

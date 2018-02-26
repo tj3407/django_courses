@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a student to all bootcamp courses</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'course/css/styles.css'%}">
+</head>
+<body>
+    <div id='formContainer'>
+        <h1>Add a new course</h1>
+        <form action="/add" method="post">
+            {% csrf_token %}
+            <p>Name: <input type="text" name="course_name"></p>
+            <p>Description: <textarea name="course_desc" rows="5"></textarea></p>
+            <p><button type="submit">Add</button></p>
+        </form>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div id="courseContainer">
+        <h1>Courses</h1>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for data in desc %}
+                <tr>
+                    <td>{{ data.course.name }}</td>
+                    <td>{{ data.desc }}</td>
+                    <td>{{ data.course.created_at }}</td>
+                    <td><a href="/courses/destroy/{{ data.course.id }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
